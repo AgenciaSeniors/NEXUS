@@ -61,7 +61,7 @@ export function TicketModal({ sale, order, onClose }: TicketModalProps) {
       <div id="printable-ticket" className="bg-white w-full max-w-[380px] shadow-2xl overflow-hidden relative rounded-2xl">
         
         {/* Decoración Visual (Si es pre-cuenta es naranja, si es final es azul) */}
-        <div className={`h-3 w-full no-print ${isPreBill ? 'bg-orange-500' : 'bg-[#0B3B68]'}`}></div>
+        <div className={`h-3 w-full no-print ${isPreBill ? 'bg-orange-500' : 'bg-[#1C1917]'}`}></div>
 
         {/* --- CONTENIDO DEL TICKET --- */}
         <div 
@@ -71,7 +71,7 @@ export function TicketModal({ sale, order, onClose }: TicketModalProps) {
           {/* 1. ENCABEZADO */}
           <div className="text-center mb-4">
             <h2 className="text-xl font-black uppercase tracking-wider mb-1">
-               {config?.name || 'BISNE CON TALLA'}
+               {config?.name || 'NEXUS'}
             </h2>
             {config?.address && <p className="text-[10px] text-slate-500 uppercase">{config.address}</p>}
             {config?.phone && <p className="text-[10px] text-slate-500">Tel: {config.phone}</p>}
@@ -255,7 +255,7 @@ export function TicketModal({ sale, order, onClose }: TicketModalProps) {
           <button 
             onClick={handlePrint} 
             autoFocus
-            className={`flex-1 text-white font-bold py-3 rounded-xl transition-colors flex justify-center items-center gap-2 shadow-lg ${isPreBill ? 'bg-orange-500 hover:bg-orange-600' : 'bg-[#0B3B68] hover:bg-[#0B3B68]/90'}`}
+            className={`flex-1 text-white font-bold py-3 rounded-xl transition-colors flex justify-center items-center gap-2 shadow-lg ${isPreBill ? 'bg-orange-500 hover:bg-orange-600' : 'bg-[#1C1917] hover:bg-[#1C1917]/90'}`}
           >
             <Printer size={18} /> Imprimir / PDF
           </button>

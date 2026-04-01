@@ -250,7 +250,7 @@ export function Layout({ currentStaff, onChangeStaff }: LayoutProps) {
           {multipleStaff && onChangeStaff && (
             <button
               onClick={onChangeStaff}
-              className="mt-1 mx-auto flex items-center justify-center gap-1 text-[9px] font-bold text-white/50 hover:text-[#7AC142] transition-colors uppercase tracking-wide"
+              className="mt-1 mx-auto flex items-center justify-center gap-1 text-[9px] font-bold text-white/50 hover:text-[#EA580C] transition-colors uppercase tracking-wide"
               title="Cambiar vendedor"
             >
               <ArrowLeftRight size={10}/> cambiar

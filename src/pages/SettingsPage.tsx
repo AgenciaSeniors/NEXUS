@@ -265,7 +265,7 @@ export function SettingsPage() {
           const a = document.createElement('a');
           a.href = url;
           const date = new Date().toISOString().split('T')[0];
-          a.download = `Respaldo_Bisne_${date}.json`;
+          a.download = `Respaldo_Nexus_${date}.json`;
           
           document.body.appendChild(a);
           a.click();
@@ -356,64 +356,64 @@ export function SettingsPage() {
   // ──────────────────────────────────────────────────────────────────────────
 
   return (
-    <div className="p-4 md:p-6 pb-24 max-w-6xl mx-auto min-h-screen bg-[#F3F4F6]">
+    <div className="p-4 md:p-6 pb-24 max-w-6xl mx-auto min-h-screen bg-[#FAFAF9]">
       
       <div className="mb-8">
-        <h1 className="text-3xl font-black text-[#0B3B68] mb-2">Configuración</h1>
-        <p className="text-[#6B7280]">Administra tu negocio, dispositivos y copias de seguridad.</p>
+        <h1 className="text-3xl font-black text-[#1C1917] mb-2">Configuración</h1>
+        <p className="text-[#78716C]">Administra tu negocio, dispositivos y copias de seguridad.</p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-6">
         
         <div className="w-full md:w-64 flex flex-col gap-2 shrink-0">
-            <button onClick={() => setActiveTab('general')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'general' ? 'bg-[#0B3B68] text-white shadow-lg shadow-[#0B3B68]/20' : 'bg-white text-[#6B7280] hover:bg-white/80 hover:text-[#0B3B68]'}`}><Store size={20}/> Mi Negocio</button>
+            <button onClick={() => setActiveTab('general')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'general' ? 'bg-[#1C1917] text-white shadow-lg shadow-[#1C1917]/20' : 'bg-white text-[#78716C] hover:bg-white/80 hover:text-[#1C1917]'}`}><Store size={20}/> Mi Negocio</button>
             {currentStaff?.role === 'admin' && (
-              <button onClick={() => setActiveTab('team')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'team' ? 'bg-[#0B3B68] text-white shadow-lg shadow-[#0B3B68]/20' : 'bg-white text-[#6B7280] hover:bg-white/80 hover:text-[#0B3B68]'}`}>
+              <button onClick={() => setActiveTab('team')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'team' ? 'bg-[#1C1917] text-white shadow-lg shadow-[#1C1917]/20' : 'bg-white text-[#78716C] hover:bg-white/80 hover:text-[#1C1917]'}`}>
                 <Users size={20}/> Equipo
                 {staffList.length > 0 && (
-                  <span className={`ml-auto text-xs font-black px-2 py-0.5 rounded-full ${activeTab === 'team' ? 'bg-white/20 text-white' : 'bg-[#0B3B68]/10 text-[#0B3B68]'}`}>
+                  <span className={`ml-auto text-xs font-black px-2 py-0.5 rounded-full ${activeTab === 'team' ? 'bg-white/20 text-white' : 'bg-[#1C1917]/10 text-[#1C1917]'}`}>
                     {staffList.filter(s => s.active !== false).length}
                   </span>
                 )}
               </button>
             )}
-            <button onClick={() => setActiveTab('devices')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'devices' ? 'bg-[#0B3B68] text-white shadow-lg shadow-[#0B3B68]/20' : 'bg-white text-[#6B7280] hover:bg-white/80 hover:text-[#0B3B68]'}`}><Printer size={20}/> Hardware</button>
-            <button onClick={() => setActiveTab('data')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'data' ? 'bg-[#0B3B68] text-white shadow-lg shadow-[#0B3B68]/20' : 'bg-white text-[#6B7280] hover:bg-white/80 hover:text-[#0B3B68]'}`}><Shield size={20}/> Datos y Respaldo</button>
-            <button onClick={() => setActiveTab('help')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'help' ? 'bg-[#0B3B68] text-white shadow-lg shadow-[#0B3B68]/20' : 'bg-white text-[#6B7280] hover:bg-white/80 hover:text-[#0B3B68]'}`}><HelpCircle size={20}/> Guía Rápida</button>
-            <button onClick={() => setActiveTab('legal')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'legal' ? 'bg-[#0B3B68] text-white shadow-lg shadow-[#0B3B68]/20' : 'bg-white text-[#6B7280] hover:bg-white/80 hover:text-[#0B3B68]'}`}><ScrollText size={20}/> Términos y Política</button>
+            <button onClick={() => setActiveTab('devices')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'devices' ? 'bg-[#1C1917] text-white shadow-lg shadow-[#1C1917]/20' : 'bg-white text-[#78716C] hover:bg-white/80 hover:text-[#1C1917]'}`}><Printer size={20}/> Hardware</button>
+            <button onClick={() => setActiveTab('data')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'data' ? 'bg-[#1C1917] text-white shadow-lg shadow-[#1C1917]/20' : 'bg-white text-[#78716C] hover:bg-white/80 hover:text-[#1C1917]'}`}><Shield size={20}/> Datos y Respaldo</button>
+            <button onClick={() => setActiveTab('help')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'help' ? 'bg-[#1C1917] text-white shadow-lg shadow-[#1C1917]/20' : 'bg-white text-[#78716C] hover:bg-white/80 hover:text-[#1C1917]'}`}><HelpCircle size={20}/> Guía Rápida</button>
+            <button onClick={() => setActiveTab('legal')} className={`flex items-center gap-3 p-4 rounded-2xl text-left transition-all font-bold ${activeTab === 'legal' ? 'bg-[#1C1917] text-white shadow-lg shadow-[#1C1917]/20' : 'bg-white text-[#78716C] hover:bg-white/80 hover:text-[#1C1917]'}`}><ScrollText size={20}/> Términos y Política</button>
         </div>
 
         <div className="flex-1">
             
             {activeTab === 'general' && (
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 animate-in fade-in slide-in-from-right-4 duration-300">
-                    <h2 className="text-xl font-bold text-[#1F2937] mb-6 flex items-center gap-2">
-                        <Store className="text-[#7AC142]"/> Perfil del Negocio
+                    <h2 className="text-xl font-bold text-[#1C1917] mb-6 flex items-center gap-2">
+                        <Store className="text-[#EA580C]"/> Perfil del Negocio
                     </h2>
                     <form onSubmit={handleSaveBusiness} className="space-y-5">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Nombre del Negocio</label>
+                                <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Nombre del Negocio</label>
                                 <input type="text" required value={businessForm.name} onChange={e => setBusinessForm({...businessForm, name: e.target.value})}
-                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none transition-all font-bold text-[#1F2937]" placeholder="Ej. Bisne con Talla" />
+                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none transition-all font-bold text-[#1C1917]" placeholder="Ej. Nexus" />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Teléfono</label>
+                                <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Teléfono</label>
                                 <input type="tel" value={businessForm.phone} onChange={e => setBusinessForm({...businessForm, phone: e.target.value})}
-                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none transition-all" placeholder="(53) 5555-5555" />
+                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none transition-all" placeholder="(53) 5555-5555" />
                             </div>
                         </div>
                         <div>
-                            <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Dirección Física</label>
+                            <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Dirección Física</label>
                             <input type="text" value={businessForm.address} onChange={e => setBusinessForm({...businessForm, address: e.target.value})}
-                                className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none transition-all" placeholder="Calle Principal #123" />
+                                className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none transition-all" placeholder="Calle Principal #123" />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
                             <div>
-                                <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Mensaje en Ticket</label>
+                                <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Mensaje en Ticket</label>
                                 <textarea rows={2} value={businessForm.receipt_message} onChange={e => setBusinessForm({...businessForm, receipt_message: e.target.value})}
-                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none transition-all resize-none" placeholder="¡Gracias por su compra!" />
+                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none transition-all resize-none" placeholder="¡Gracias por su compra!" />
                             </div>
                             <div className="bg-red-50 p-4 rounded-xl border border-red-100">
                                 <label className="block text-xs font-bold text-red-600 uppercase mb-1 flex items-center gap-1">
@@ -428,7 +428,7 @@ export function SettingsPage() {
                         
                         <div className="pt-4 border-t border-gray-100 flex justify-end">
                             <button type="submit" disabled={isLoading}
-                                className="bg-[#7AC142] hover:bg-[#7AC142]/90 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-[#7AC142]/20 flex items-center gap-2 transition-all active:scale-95 disabled:opacity-50">
+                                className="bg-[#EA580C] hover:bg-[#EA580C]/90 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-[#EA580C]/20 flex items-center gap-2 transition-all active:scale-95 disabled:opacity-50">
                                 {isLoading ? <Loader2 className="animate-spin"/> : <><Save size={20}/> Guardar Cambios</>}
                             </button>
                         </div>
@@ -442,21 +442,21 @@ export function SettingsPage() {
                       const lastDayStr = `${y}-${String(m).padStart(2,'0')}-${String(lastDay).padStart(2,'0')}`;
                       const billingPaid = !!billing.paid_until && billing.paid_until >= lastDayStr;
                       return (
-                      <div className={`mt-6 rounded-2xl border p-5 flex items-center gap-4 ${billingPaid ? 'bg-[#7AC142]/5 border-[#7AC142]/20' : billing.fee > 0 ? 'bg-amber-50 border-amber-200' : 'bg-gray-50 border-gray-200'}`}>
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${billingPaid ? 'bg-[#7AC142]/10 text-[#7AC142]' : billing.fee > 0 ? 'bg-amber-100 text-amber-600' : 'bg-gray-100 text-gray-400'}`}>
+                      <div className={`mt-6 rounded-2xl border p-5 flex items-center gap-4 ${billingPaid ? 'bg-[#EA580C]/5 border-[#EA580C]/20' : billing.fee > 0 ? 'bg-amber-50 border-amber-200' : 'bg-gray-50 border-gray-200'}`}>
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${billingPaid ? 'bg-[#EA580C]/10 text-[#EA580C]' : billing.fee > 0 ? 'bg-amber-100 text-amber-600' : 'bg-gray-100 text-gray-400'}`}>
                           <DollarSign size={22}/>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-bold text-[#6B7280] uppercase tracking-wide mb-1">Servicio Bisne con Talla — {now.toLocaleString('es',{month:'long',year:'numeric'})}</p>
+                          <p className="text-xs font-bold text-[#78716C] uppercase tracking-wide mb-1">Servicio Nexus — {now.toLocaleString('es',{month:'long',year:'numeric'})}</p>
                           <div className="flex flex-wrap gap-x-6 gap-y-1">
-                            <span className="text-sm text-[#1F2937]">Ventas del mes: <strong className="font-black">${billing.total_sales.toFixed(2)}</strong></span>
-                            <span className="text-sm text-[#1F2937]">Tarifa: <strong className="font-black">{billing.rate}%</strong></span>
-                            <span className="text-sm text-[#1F2937]">A pagar: <strong className={`font-black text-base ${billing.fee > 0 ? 'text-amber-600' : 'text-[#6B7280]'}`}>${billing.fee.toFixed(2)}</strong></span>
+                            <span className="text-sm text-[#1C1917]">Ventas del mes: <strong className="font-black">${billing.total_sales.toFixed(2)}</strong></span>
+                            <span className="text-sm text-[#1C1917]">Tarifa: <strong className="font-black">{billing.rate}%</strong></span>
+                            <span className="text-sm text-[#1C1917]">A pagar: <strong className={`font-black text-base ${billing.fee > 0 ? 'text-amber-600' : 'text-[#78716C]'}`}>${billing.fee.toFixed(2)}</strong></span>
                           </div>
                         </div>
                         <div className="shrink-0">
                           {billingPaid ? (
-                            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-[#7AC142]/10 text-[#7AC142] rounded-full text-xs font-black uppercase">
+                            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-[#EA580C]/10 text-[#EA580C] rounded-full text-xs font-black uppercase">
                               <CheckCircle2 size={13}/> Al día
                             </span>
                           ) : billing.fee > 0 ? (
@@ -507,23 +507,23 @@ export function SettingsPage() {
             {activeTab === 'team' && (
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 animate-in fade-in slide-in-from-right-4 duration-300">
                     <div className="flex justify-between items-center mb-6">
-                        <h2 className="text-xl font-bold text-[#1F2937] flex items-center gap-2">
-                            <Users className="text-[#7AC142]"/> Mi Equipo
+                        <h2 className="text-xl font-bold text-[#1C1917] flex items-center gap-2">
+                            <Users className="text-[#EA580C]"/> Mi Equipo
                         </h2>
                         <button
                             onClick={openAddStaff}
-                            className="flex items-center gap-2 bg-[#0B3B68] text-white px-4 py-2 rounded-xl font-bold text-sm hover:bg-[#0B3B68]/90 transition-all active:scale-95 shadow-lg shadow-[#0B3B68]/20"
+                            className="flex items-center gap-2 bg-[#1C1917] text-white px-4 py-2 rounded-xl font-bold text-sm hover:bg-[#1C1917]/90 transition-all active:scale-95 shadow-lg shadow-[#1C1917]/20"
                         >
                             <Plus size={16}/> Agregar
                         </button>
                     </div>
 
-                    <p className="text-sm text-[#6B7280] mb-5 bg-blue-50 border border-blue-100 rounded-xl p-3 leading-relaxed">
+                    <p className="text-sm text-[#78716C] mb-5 bg-blue-50 border border-blue-100 rounded-xl p-3 leading-relaxed">
                         Cada vendedor se identifica con su PIN al abrir la app en su dispositivo. Puedes tener varios vendiendo al mismo tiempo sin conflictos.
                     </p>
 
                     {staffList.length === 0 ? (
-                        <div className="text-center py-12 text-[#6B7280]">
+                        <div className="text-center py-12 text-[#78716C]">
                             <Users size={48} className="mx-auto mb-3 stroke-1 opacity-30"/>
                             <p className="font-bold">No hay empleados agregados aún</p>
                             <p className="text-sm">Toca "Agregar" para crear el primer perfil</p>
@@ -535,28 +535,28 @@ export function SettingsPage() {
                                 return (
                                     <div key={staff.id} className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${staff.active !== false ? 'border-gray-200 bg-white' : 'border-gray-100 bg-gray-50 opacity-60'}`}>
                                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-black text-lg flex-shrink-0 border-2 ${
-                                            staff.role === 'admin' ? 'bg-[#7AC142] text-[#0B3B68] border-[#7AC142]' : 'bg-[#0B3B68]/10 text-[#0B3B68] border-[#0B3B68]/20'
+                                            staff.role === 'admin' ? 'bg-[#EA580C] text-[#1C1917] border-[#EA580C]' : 'bg-[#1C1917]/10 text-[#1C1917] border-[#1C1917]/20'
                                         }`}>
                                             {staff.name.substring(0, 2).toUpperCase()}
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <div className="flex items-center gap-2 flex-wrap">
-                                                <p className="font-bold text-[#1F2937] truncate">{staff.name}</p>
+                                                <p className="font-bold text-[#1C1917] truncate">{staff.name}</p>
                                                 {isOwner && (
-                                                    <span className="text-[10px] font-black bg-[#7AC142] text-[#0B3B68] px-2 py-0.5 rounded-full uppercase">Tú</span>
+                                                    <span className="text-[10px] font-black bg-[#EA580C] text-[#1C1917] px-2 py-0.5 rounded-full uppercase">Tú</span>
                                                 )}
                                                 {staff.active === false && (
                                                     <span className="text-[10px] font-black bg-gray-200 text-gray-500 px-2 py-0.5 rounded-full uppercase">Inactivo</span>
                                                 )}
                                             </div>
-                                            <p className="text-xs text-[#6B7280] capitalize">
+                                            <p className="text-xs text-[#78716C] capitalize">
                                                 {staff.role === 'admin' ? 'Administrador' : 'Vendedor'} · PIN: ****
                                             </p>
                                         </div>
                                         <div className="flex items-center gap-2 flex-shrink-0">
                                             <button
                                                 onClick={() => openEditStaff(staff)}
-                                                className="p-2 text-[#6B7280] hover:text-[#0B3B68] hover:bg-[#0B3B68]/5 rounded-lg transition-colors"
+                                                className="p-2 text-[#78716C] hover:text-[#1C1917] hover:bg-[#1C1917]/5 rounded-lg transition-colors"
                                                 title="Editar"
                                             >
                                                 <Edit2 size={16}/>
@@ -564,7 +564,7 @@ export function SettingsPage() {
                                             {!isOwner && (
                                                 <button
                                                     onClick={() => handleToggleStaff(staff)}
-                                                    className={`p-2 rounded-lg transition-colors ${staff.active !== false ? 'text-[#EF4444] hover:bg-red-50' : 'text-[#7AC142] hover:bg-green-50'}`}
+                                                    className={`p-2 rounded-lg transition-colors ${staff.active !== false ? 'text-[#EF4444] hover:bg-red-50' : 'text-[#EA580C] hover:bg-green-50'}`}
                                                     title={staff.active !== false ? 'Desactivar' : 'Activar'}
                                                 >
                                                     {staff.active !== false ? <UserX size={16}/> : <UserCheck size={16}/>}
@@ -581,16 +581,16 @@ export function SettingsPage() {
 
             {activeTab === 'devices' && (
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 animate-in fade-in slide-in-from-right-4 duration-300">
-                    <h2 className="text-xl font-bold text-[#1F2937] mb-6 flex items-center gap-2">
-                        <Printer className="text-[#0B3B68]"/> Configuración de Impresora
+                    <h2 className="text-xl font-bold text-[#1C1917] mb-6 flex items-center gap-2">
+                        <Printer className="text-[#1C1917]"/> Configuración de Impresora
                     </h2>
                     
-                    <div className="bg-[#F3F4F6] p-4 rounded-xl mb-6 flex items-start gap-3 border border-gray-200">
-                        <Smartphone className="text-[#0B3B68] mt-1" size={20}/>
+                    <div className="bg-[#FAFAF9] p-4 rounded-xl mb-6 flex items-start gap-3 border border-gray-200">
+                        <Smartphone className="text-[#1C1917] mt-1" size={20}/>
                         <div>
-                            <h4 className="font-bold text-[#1F2937] text-sm">Modo Híbrido</h4>
-                            <p className="text-xs text-[#6B7280] mt-1">
-                                Si estás usando Bisne en un celular, la impresión se realizará a través del navegador o la app nativa instalada.
+                            <h4 className="font-bold text-[#1C1917] text-sm">Modo Híbrido</h4>
+                            <p className="text-xs text-[#78716C] mt-1">
+                                Si estás usando Nexus en un celular, la impresión se realizará a través del navegador o la app nativa instalada.
                             </p>
                         </div>
                     </div>
@@ -598,14 +598,14 @@ export function SettingsPage() {
                     <div className="space-y-5">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Dirección IP / Host</label>
+                                <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Dirección IP / Host</label>
                                 <input type="text" value={printerConfig.ip} onChange={e => setPrinterConfig({...printerConfig, ip: e.target.value})}
-                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none font-mono" />
+                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none font-mono" />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Ancho de Papel</label>
+                                <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Ancho de Papel</label>
                                 <select value={printerConfig.width} onChange={e => setPrinterConfig({...printerConfig, width: e.target.value})}
-                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none bg-white">
+                                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none bg-white">
                                     <option value="58mm">58mm (Estándar)</option>
                                     <option value="80mm">80mm (Ancho)</option>
                                 </select>
@@ -614,12 +614,12 @@ export function SettingsPage() {
                         
                         <div className="flex items-center gap-2">
                             <input type="checkbox" id="autoPrint" checked={printerConfig.autoPrint} onChange={e => setPrinterConfig({...printerConfig, autoPrint: e.target.checked})} 
-                                className="w-5 h-5 text-[#0B3B68] rounded focus:ring-[#0B3B68] border-gray-300"/>
-                            <label htmlFor="autoPrint" className="text-sm font-bold text-[#1F2937]">Imprimir ticket automáticamente al cobrar</label>
+                                className="w-5 h-5 text-[#1C1917] rounded focus:ring-[#1C1917] border-gray-300"/>
+                            <label htmlFor="autoPrint" className="text-sm font-bold text-[#1C1917]">Imprimir ticket automáticamente al cobrar</label>
                         </div>
 
                         <div className="pt-4 border-t border-gray-100 flex justify-end gap-3">
-                            <button onClick={handleTestPrint} className="px-6 py-3 border border-[#0B3B68] text-[#0B3B68] font-bold rounded-xl hover:bg-[#0B3B68]/5 transition-colors">
+                            <button onClick={handleTestPrint} className="px-6 py-3 border border-[#1C1917] text-[#1C1917] font-bold rounded-xl hover:bg-[#1C1917]/5 transition-colors">
                                 Probar Conexión
                             </button>
                             <button
@@ -627,7 +627,7 @@ export function SettingsPage() {
                                     localStorage.setItem('nexus_printer_config', JSON.stringify(printerConfig));
                                     toast.success('Configuración de impresora guardada');
                                 }}
-                                className="bg-[#0B3B68] text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-[#0B3B68]/90 transition-all"
+                                className="bg-[#1C1917] text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-[#1C1917]/90 transition-all"
                             >
                                 Guardar Configuración
                             </button>
@@ -638,16 +638,16 @@ export function SettingsPage() {
 
             {activeTab === 'data' && (
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 animate-in fade-in slide-in-from-right-4 duration-300">
-                    <h2 className="text-xl font-bold text-[#1F2937] mb-6 flex items-center gap-2">
-                        <Shield className="text-[#0B3B68]"/> Estado y Respaldos
+                    <h2 className="text-xl font-bold text-[#1C1917] mb-6 flex items-center gap-2">
+                        <Shield className="text-[#1C1917]"/> Estado y Respaldos
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                        <div className={`p-4 rounded-xl border flex items-center gap-4 ${onlineStatus ? 'bg-[#7AC142]/5 border-[#7AC142]/20' : 'bg-[#EF4444]/5 border-[#EF4444]/20'}`}>
-                            {onlineStatus ? <Wifi className="text-[#7AC142]" size={28}/> : <WifiOff className="text-[#EF4444]" size={28}/>}
+                        <div className={`p-4 rounded-xl border flex items-center gap-4 ${onlineStatus ? 'bg-[#EA580C]/5 border-[#EA580C]/20' : 'bg-[#EF4444]/5 border-[#EF4444]/20'}`}>
+                            {onlineStatus ? <Wifi className="text-[#EA580C]" size={28}/> : <WifiOff className="text-[#EF4444]" size={28}/>}
                             <div>
-                                <h4 className="font-bold text-[#1F2937]">Conexión a Internet</h4>
-                                <p className={`text-xs font-bold ${onlineStatus ? 'text-[#7AC142]' : 'text-[#EF4444]'}`}>
+                                <h4 className="font-bold text-[#1C1917]">Conexión a Internet</h4>
+                                <p className={`text-xs font-bold ${onlineStatus ? 'text-[#EA580C]' : 'text-[#EF4444]'}`}>
                                     {onlineStatus ? 'En línea' : 'Sin conexión'}
                                 </p>
                             </div>
@@ -655,7 +655,7 @@ export function SettingsPage() {
                         <div className="p-4 rounded-xl border bg-blue-50 border-blue-100 flex items-center gap-4">
                             <RefreshCw className="text-blue-600" size={28}/>
                             <div>
-                                <h4 className="font-bold text-[#1F2937]">Nube de Supabase</h4>
+                                <h4 className="font-bold text-[#1C1917]">Nube de Supabase</h4>
                                 <p className="text-xs text-blue-600">Sincronización Activa</p>
                             </div>
                         </div>
@@ -664,10 +664,10 @@ export function SettingsPage() {
                     <div className="space-y-3">
                         <button onClick={handleManualSync} disabled={!onlineStatus || isSyncing}
                             className="w-full p-4 flex items-center justify-between bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors group">
-                            <span className="flex items-center gap-3 font-bold text-[#1F2937]">
-                                <RefreshCw className={`text-[#0B3B68] ${isSyncing ? 'animate-spin' : ''}`}/> Forzar Sincronización Manual
+                            <span className="flex items-center gap-3 font-bold text-[#1C1917]">
+                                <RefreshCw className={`text-[#1C1917] ${isSyncing ? 'animate-spin' : ''}`}/> Forzar Sincronización Manual
                             </span>
-                            <span className="text-xs font-bold bg-[#0B3B68] text-white px-3 py-1 rounded-full group-hover:shadow-md transition-all">Sincronizar</span>
+                            <span className="text-xs font-bold bg-[#1C1917] text-white px-3 py-1 rounded-full group-hover:shadow-md transition-all">Sincronizar</span>
                         </button>
                         {failedCount > 0 && (
                             <button onClick={handleRetryFailed} disabled={!onlineStatus || isRetrying}
@@ -682,11 +682,11 @@ export function SettingsPage() {
 
                         {/* ✅ NUEVA ZONA DE COPIAS DE SEGURIDAD LOCALES */}
                         <div className="border-t border-gray-100 my-6 pt-6">
-                            <h4 className="font-bold text-[#1F2937] mb-2 flex items-center gap-2">
-                                <Database className="text-[#0B3B68]" size={20}/>
+                            <h4 className="font-bold text-[#1C1917] mb-2 flex items-center gap-2">
+                                <Database className="text-[#1C1917]" size={20}/>
                                 Copias de Seguridad Locales (Offline)
                             </h4>
-                            <p className="text-xs text-[#6B7280] mb-4 leading-relaxed">
+                            <p className="text-xs text-[#78716C] mb-4 leading-relaxed">
                                 Si vas a cambiar de teléfono , reinstalar o actualizar la aplicación, descarga un respaldo de tus datos y guárdalo en un lugar seguro. Luego podrás restaurarlo aquí mismo.
                             </p>
                             
@@ -694,7 +694,7 @@ export function SettingsPage() {
                                 <button 
                                     onClick={handleExportBackup} 
                                     disabled={isLoading} 
-                                    className="p-3.5 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 font-bold text-[#0B3B68] shadow-sm active:scale-95"
+                                    className="p-3.5 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 font-bold text-[#1C1917] shadow-sm active:scale-95"
                                 >
                                     {isLoading ? <Loader2 className="animate-spin"/> : <><Download size={18}/> Descargar Respaldo</>}
                                 </button>
@@ -710,7 +710,7 @@ export function SettingsPage() {
                                 <button 
                                     onClick={() => fileInputRef.current?.click()} 
                                     disabled={isLoading} 
-                                    className="p-3.5 bg-[#0B3B68] text-white rounded-xl hover:bg-[#0B3B68]/90 transition-colors flex items-center justify-center gap-2 font-bold shadow-lg shadow-[#0B3B68]/20 active:scale-95"
+                                    className="p-3.5 bg-[#1C1917] text-white rounded-xl hover:bg-[#1C1917]/90 transition-colors flex items-center justify-center gap-2 font-bold shadow-lg shadow-[#1C1917]/20 active:scale-95"
                                 >
                                     <Upload size={18}/> Restaurar Respaldo
                                 </button>
@@ -727,9 +727,9 @@ export function SettingsPage() {
                                 </button>
                             </div>
                             <div className="text-right pl-6 flex-shrink-0">
-                                <p className="text-[10px] font-bold text-[#6B7280] uppercase tracking-wider">Versión</p>
-                                <p className="text-lg font-black text-[#0B3B68]">v{__APP_VERSION__}</p>
-                                <p className="text-[10px] text-[#6B7280]">Bisne con Talla</p>
+                                <p className="text-[10px] font-bold text-[#78716C] uppercase tracking-wider">Versión</p>
+                                <p className="text-lg font-black text-[#1C1917]">v{__APP_VERSION__}</p>
+                                <p className="text-[10px] text-[#78716C]">Nexus</p>
                             </div>
                         </div>
                     </div>
@@ -739,59 +739,59 @@ export function SettingsPage() {
       </div>
 
       {showStaffModal && (
-          <div className="fixed inset-0 bg-[#0B3B68]/60 backdrop-blur-sm z-[60] flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="fixed inset-0 bg-[#1C1917]/60 backdrop-blur-sm z-[60] flex items-center justify-center p-4 animate-in fade-in duration-200">
               <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 animate-in zoom-in-95 duration-200">
                   <div className="flex justify-between items-center mb-5">
-                      <h3 className="font-bold text-lg text-[#1F2937] flex items-center gap-2">
-                          <Users size={20} className="text-[#7AC142]"/>
+                      <h3 className="font-bold text-lg text-[#1C1917] flex items-center gap-2">
+                          <Users size={20} className="text-[#EA580C]"/>
                           {editingStaff ? 'Editar Empleado' : 'Nuevo Empleado'}
                       </h3>
-                      <button onClick={() => setShowStaffModal(false)} className="p-1.5 text-[#6B7280] hover:text-[#1F2937] hover:bg-gray-100 rounded-lg transition-colors">
+                      <button onClick={() => setShowStaffModal(false)} className="p-1.5 text-[#78716C] hover:text-[#1C1917] hover:bg-gray-100 rounded-lg transition-colors">
                           <X size={20}/>
                       </button>
                   </div>
                   <form onSubmit={handleSaveStaff} className="space-y-4">
                       <div>
-                          <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Nombre</label>
+                          <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Nombre</label>
                           <input
                               type="text" required autoFocus
                               value={staffForm.name}
                               onChange={e => setStaffForm({...staffForm, name: e.target.value})}
-                              className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none transition-all font-bold text-[#1F2937]"
+                              className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none transition-all font-bold text-[#1C1917]"
                               placeholder="Ej. María González"
                           />
                       </div>
                       <div>
-                          <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Rol</label>
+                          <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Rol</label>
                           <select
                               value={staffForm.role}
                               onChange={e => setStaffForm({...staffForm, role: e.target.value as 'admin' | 'vendedor'})}
-                              className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none bg-white font-bold text-[#1F2937]"
+                              className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none bg-white font-bold text-[#1C1917]"
                           >
                               <option value="vendedor">Vendedor</option>
                               <option value="admin">Administrador</option>
                           </select>
                       </div>
                       <div>
-                          <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1 flex items-center gap-1">
+                          <label className="block text-xs font-bold text-[#78716C] uppercase mb-1 flex items-center gap-1">
                               <Lock size={12}/> PIN (4 dígitos){editingStaff && <span className="font-normal normal-case ml-1 text-gray-400">— vacío = sin cambios</span>}
                           </label>
                           <input
                               type="password" inputMode="numeric" maxLength={4}
                               value={staffForm.pin}
                               onChange={e => setStaffForm({...staffForm, pin: e.target.value.replace(/\D/g, '').slice(0, 4)})}
-                              className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none font-mono text-2xl tracking-widest text-center"
+                              className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none font-mono text-2xl tracking-widest text-center"
                               placeholder={editingStaff ? 'Dejar vacío = sin cambios' : '••••'}
                           />
-                          <p className="text-[10px] text-[#6B7280] mt-1">El empleado usará este PIN para identificarse en cada dispositivo</p>
+                          <p className="text-[10px] text-[#78716C] mt-1">El empleado usará este PIN para identificarse en cada dispositivo</p>
                       </div>
                       <div className="flex gap-3 pt-2">
                           <button type="button" onClick={() => setShowStaffModal(false)}
-                              className="flex-1 py-3 border border-gray-200 text-[#6B7280] font-bold rounded-xl hover:bg-gray-50 transition-colors">
+                              className="flex-1 py-3 border border-gray-200 text-[#78716C] font-bold rounded-xl hover:bg-gray-50 transition-colors">
                               Cancelar
                           </button>
                           <button type="submit"
-                              className="flex-1 py-3 bg-[#0B3B68] text-white font-bold rounded-xl hover:bg-[#0B3B68]/90 transition-all active:scale-95 shadow-lg shadow-[#0B3B68]/20">
+                              className="flex-1 py-3 bg-[#1C1917] text-white font-bold rounded-xl hover:bg-[#1C1917]/90 transition-all active:scale-95 shadow-lg shadow-[#1C1917]/20">
                               {editingStaff ? 'Guardar Cambios' : 'Agregar Empleado'}
                           </button>
                       </div>
@@ -804,25 +804,25 @@ export function SettingsPage() {
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 animate-in fade-in slide-in-from-right-4 duration-300 space-y-6">
           {/* Encabezado */}
           <div>
-            <h2 className="text-xl font-bold text-[#1F2937] mb-1 flex items-center gap-2">
-              <ScrollText size={22} className="text-[#0B3B68]" /> Términos de Uso y Política de Privacidad
+            <h2 className="text-xl font-bold text-[#1C1917] mb-1 flex items-center gap-2">
+              <ScrollText size={22} className="text-[#1C1917]" /> Términos de Uso y Política de Privacidad
             </h2>
-            <p className="text-xs text-[#6B7280]">Bisne con Talla · Agencia Señores · Versión 1.0 · Sancti Spíritus, Cuba · 2025</p>
+            <p className="text-xs text-[#78716C]">Nexus · Agencia Señores · Versión 1.0 · Sancti Spíritus, Cuba · 2025</p>
           </div>
 
           {/* Sección 1 — Aceptación */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-1">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Info size={15}/> 1. Aceptación de los Términos</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Info size={15}/> 1. Aceptación de los Términos</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
-              Al registrarte y utilizar <strong>Bisne con Talla</strong>, aceptas de forma plena y sin reservas los presentes Términos de Uso y la Política de Privacidad. Si no estás de acuerdo con alguno de estos términos, debes abstenerte de usar la aplicación.
+              Al registrarte y utilizar <strong>Nexus</strong>, aceptas de forma plena y sin reservas los presentes Términos de Uso y la Política de Privacidad. Si no estás de acuerdo con alguno de estos términos, debes abstenerte de usar la aplicación.
             </p>
           </div>
 
           {/* Sección 2 — Descripción */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-1">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Info size={15}/> 2. Descripción del Servicio</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Info size={15}/> 2. Descripción del Servicio</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
-              <strong>Bisne con Talla</strong> es un sistema de punto de venta (POS) <em>offline-first</em> desarrollado por <strong>Agencia Señores</strong> para negocios ubicados en Cuba. La aplicación opera de forma local en el dispositivo del usuario y sincroniza datos con la nube cuando existe conexión a internet disponible.
+              <strong>Nexus</strong> es un sistema de punto de venta (POS) <em>offline-first</em> desarrollado por <strong>Agencia Señores</strong> para negocios ubicados en Cuba. La aplicación opera de forma local en el dispositivo del usuario y sincroniza datos con la nube cuando existe conexión a internet disponible.
             </p>
             <p className="text-sm text-[#4B5563] leading-relaxed mt-2">
               El servicio incluye: gestión de ventas, inventario, clientes, turnos de caja, reportes financieros y sincronización multi-dispositivo.
@@ -831,15 +831,15 @@ export function SettingsPage() {
 
           {/* Sección 3 — Período de prueba */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-1">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Info size={15}/> 3. Período de Prueba</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Info size={15}/> 3. Período de Prueba</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
               Los nuevos usuarios tienen acceso <strong>gratuito durante 7 días</strong> desde la fecha de registro. Al finalizar este período, se requiere una suscripción activa para continuar utilizando el sistema. Agencia Señores se reserva el derecho de suspender el acceso transcurrido dicho plazo sin pago confirmado.
             </p>
           </div>
 
           {/* Sección 4 — Tarifas (la más importante) */}
-          <div className="border-2 border-[#0B3B68]/20 bg-[#0B3B68]/03 rounded-2xl p-4 space-y-3">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><DollarSign size={15}/> 4. Tarifas y Modelo de Cobro</h3>
+          <div className="border-2 border-[#1C1917]/20 bg-[#1C1917]/03 rounded-2xl p-4 space-y-3">
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><DollarSign size={15}/> 4. Tarifas y Modelo de Cobro</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
               El cobro del servicio se basa en el <strong>volumen mensual de ventas registradas</strong> en la plataforma. El nivel tarifario se detecta automáticamente al cierre de cada mes:
             </p>
@@ -863,14 +863,14 @@ export function SettingsPage() {
                 <p className="text-xs text-violet-600 mt-1">sobre el total de ventas del mes</p>
               </div>
             </div>
-            <p className="text-xs text-[#6B7280] mt-2">
+            <p className="text-xs text-[#78716C] mt-2">
               El monto a pagar se calcula automáticamente y debe abonarse dentro de los primeros <strong>5 días hábiles</strong> del mes siguiente al período facturado. Las ventas anuladas no se incluyen en el cálculo.
             </p>
           </div>
 
           {/* Sección 5 — Privacidad y datos */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-2">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Shield size={15}/> 5. Privacidad y Tratamiento de Datos</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Shield size={15}/> 5. Privacidad y Tratamiento de Datos</h3>
             <ul className="space-y-2 text-sm text-[#4B5563]">
               {[
                 'Los datos del negocio (ventas, inventario, clientes) se almacenan localmente en el dispositivo y se sincronizan cifrados con nuestros servidores en la nube (Supabase/PostgreSQL con RLS).',
@@ -880,7 +880,7 @@ export function SettingsPage() {
                 'Ante la solicitud del usuario, los datos pueden ser exportados o eliminados permanentemente de nuestros servidores.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-2 leading-relaxed">
-                  <CheckCircle2 size={15} className="text-[#7AC142] flex-shrink-0 mt-0.5"/>
+                  <CheckCircle2 size={15} className="text-[#EA580C] flex-shrink-0 mt-0.5"/>
                   <span>{item}</span>
                 </li>
               ))}
@@ -889,7 +889,7 @@ export function SettingsPage() {
 
           {/* Sección 6 — Copias de seguridad */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-1">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Info size={15}/> 6. Copias de Seguridad</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Info size={15}/> 6. Copias de Seguridad</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
               Se recomienda encarecidamente realizar respaldos periódicos desde <em>Configuración › Datos y Respaldo</em>. Aunque el sistema sincroniza datos con la nube, <strong>Agencia Señores no se hace responsable</strong> de la pérdida de datos causada por fallos del dispositivo, eliminación accidental o datos que nunca fueron sincronizados por falta de conexión.
             </p>
@@ -897,7 +897,7 @@ export function SettingsPage() {
 
           {/* Sección 7 — Uso aceptable */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-1">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Info size={15}/> 7. Uso Aceptable</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Info size={15}/> 7. Uso Aceptable</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
               El sistema está diseñado exclusivamente para la gestión comercial legal de negocios. Queda terminantemente prohibido su uso para registrar actividades ilícitas, evadir impuestos o cualquier otra acción contraria a la legislación vigente. El usuario es el único responsable de la exactitud y legalidad de la información registrada.
             </p>
@@ -905,7 +905,7 @@ export function SettingsPage() {
 
           {/* Sección 8 — Modificaciones */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-1">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Info size={15}/> 8. Modificaciones a los Términos</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Info size={15}/> 8. Modificaciones a los Términos</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
               Agencia Señores se reserva el derecho de modificar estos términos en cualquier momento. Los cambios significativos serán notificados a los usuarios con al menos <strong>15 días de antelación</strong> a través de la propia aplicación. El uso continuado del servicio tras la notificación implica la aceptación de los nuevos términos.
             </p>
@@ -913,23 +913,23 @@ export function SettingsPage() {
 
           {/* Sección 9 — Limitación de responsabilidad */}
           <div className="border border-gray-100 rounded-2xl p-4 space-y-1">
-            <h3 className="font-black text-[#0B3B68] text-sm flex items-center gap-2"><Info size={15}/> 9. Limitación de Responsabilidad</h3>
+            <h3 className="font-black text-[#1C1917] text-sm flex items-center gap-2"><Info size={15}/> 9. Limitación de Responsabilidad</h3>
             <p className="text-sm text-[#4B5563] leading-relaxed">
               Agencia Señores no será responsable por pérdidas de ingresos, datos o cualquier daño indirecto derivado del uso o la imposibilidad de uso de la aplicación. La responsabilidad máxima en cualquier caso no superará el monto pagado por el servicio en el último mes facturado.
             </p>
           </div>
 
           {/* Contacto */}
-          <div className="bg-[#0B3B68] rounded-2xl p-5 text-white">
+          <div className="bg-[#1C1917] rounded-2xl p-5 text-white">
             <h3 className="font-black text-sm mb-3">Contacto y Soporte</h3>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-white/80"><Phone size={14}/> <span>+53 5988-7863 (WhatsApp)</span></div>
               <div className="flex items-center gap-2 text-white/80"><MapPin size={14}/> <span>Sancti Spíritus, Cuba</span></div>
             </div>
             <a
-              href={`https://wa.me/${ADMIN_WHATSAPP_PHONE}?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20T%C3%A9rminos%20de%20Bisne%20con%20Talla`}
+              href={`https://wa.me/${ADMIN_WHATSAPP_PHONE}?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20T%C3%A9rminos%20de%20Nexus`}
               target="_blank" rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 bg-[#7AC142] text-[#0B3B68] font-black text-xs px-4 py-2 rounded-xl hover:bg-[#7AC142]/90 transition-colors"
+              className="mt-4 inline-flex items-center gap-2 bg-[#EA580C] text-[#1C1917] font-black text-xs px-4 py-2 rounded-xl hover:bg-[#EA580C]/90 transition-colors"
             >
               <Phone size={13}/> Contactar por WhatsApp
             </a>
@@ -939,14 +939,14 @@ export function SettingsPage() {
 
       {activeTab === 'help' && (
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 animate-in fade-in slide-in-from-right-4 duration-300">
-          <h2 className="text-xl font-bold text-[#1F2937] mb-1 flex items-center gap-2">
-            <HelpCircle size={22} className="text-[#0B3B68]" /> Guía Rápida
+          <h2 className="text-xl font-bold text-[#1C1917] mb-1 flex items-center gap-2">
+            <HelpCircle size={22} className="text-[#1C1917]" /> Guía Rápida
           </h2>
-          <p className="text-sm text-[#6B7280] mb-6">Aprende a sacarle el máximo provecho a Bisne con Talla</p>
+          <p className="text-sm text-[#78716C] mb-6">Aprende a sacarle el máximo provecho a Nexus</p>
 
           {/* Flujo diario */}
           <div className="mb-8">
-            <h3 className="text-sm font-black text-[#0B3B68] uppercase tracking-wider mb-3">Flujo diario recomendado</h3>
+            <h3 className="text-sm font-black text-[#1C1917] uppercase tracking-wider mb-3">Flujo diario recomendado</h3>
             <div className="flex flex-col sm:flex-row items-stretch gap-2">
               {[
                 { icon: <DollarSign size={18}/>, label: 'Abre turno', sub: 'Finanzas → Abrir turno', color: 'bg-green-100 text-green-700' },
@@ -960,8 +960,8 @@ export function SettingsPage() {
                       {step.icon}
                     </div>
                     <div>
-                      <p className="font-bold text-[#1F2937] text-sm">{step.label}</p>
-                      <p className="text-[11px] text-[#6B7280]">{step.sub}</p>
+                      <p className="font-bold text-[#1C1917] text-sm">{step.label}</p>
+                      <p className="text-[11px] text-[#78716C]">{step.sub}</p>
                     </div>
                   </div>
                   {i < arr.length - 1 && (
@@ -976,7 +976,7 @@ export function SettingsPage() {
           <div className="space-y-4">
             {[
               {
-                icon: <ShoppingCart size={20} className="text-[#0B3B68]"/>,
+                icon: <ShoppingCart size={20} className="text-[#1C1917]"/>,
                 title: 'Punto de Venta (POS)',
                 steps: [
                   'Busca productos por nombre o código, o filtra por categoría',
@@ -991,7 +991,7 @@ export function SettingsPage() {
                 ],
               },
               {
-                icon: <Package size={20} className="text-[#0B3B68]"/>,
+                icon: <Package size={20} className="text-[#1C1917]"/>,
                 title: 'Inventario',
                 steps: [
                   'Crea el producto con nombre, precio y categoría',
@@ -1002,7 +1002,7 @@ export function SettingsPage() {
                 ],
               },
               {
-                icon: <BarChart2 size={20} className="text-[#0B3B68]"/>,
+                icon: <BarChart2 size={20} className="text-[#1C1917]"/>,
                 title: 'Finanzas',
                 steps: [
                   'Abre un turno al inicio del día indicando el efectivo inicial en caja',
@@ -1014,7 +1014,7 @@ export function SettingsPage() {
                 ],
               },
               {
-                icon: <UserCircle size={20} className="text-[#0B3B68]"/>,
+                icon: <UserCircle size={20} className="text-[#1C1917]"/>,
                 title: 'Clientes y Puntos de Lealtad',
                 steps: [
                   'Agrega clientes con nombre, teléfono y correo desde la sección Clientes',
@@ -1026,7 +1026,7 @@ export function SettingsPage() {
                 ],
               },
               {
-                icon: <Repeat size={20} className="text-[#0B3B68]"/>,
+                icon: <Repeat size={20} className="text-[#1C1917]"/>,
                 title: 'Sincronización y conexión',
                 steps: [
                   'Todo se guarda en el dispositivo primero — la app funciona completamente sin internet',
@@ -1041,17 +1041,17 @@ export function SettingsPage() {
             ].map((section) => (
               <details key={section.title} className="group border border-gray-200 rounded-2xl overflow-hidden">
                 <summary className="flex items-center gap-3 p-4 cursor-pointer select-none hover:bg-gray-50 transition-colors list-none">
-                  <div className="w-9 h-9 rounded-xl bg-[#0B3B68]/8 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-[#1C1917]/8 flex items-center justify-center flex-shrink-0">
                     {section.icon}
                   </div>
-                  <span className="font-bold text-[#1F2937] flex-1">{section.title}</span>
-                  <ChevronRight size={16} className="text-[#6B7280] transition-transform group-open:rotate-90" />
+                  <span className="font-bold text-[#1C1917] flex-1">{section.title}</span>
+                  <ChevronRight size={16} className="text-[#78716C] transition-transform group-open:rotate-90" />
                 </summary>
                 <div className="px-4 pb-4 pt-1">
                   <ul className="space-y-2">
                     {section.steps.map((step, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-[#374151]">
-                        <CheckCircle2 size={15} className="text-[#7AC142] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={15} className="text-[#EA580C] mt-0.5 flex-shrink-0" />
                         {step}
                       </li>
                     ))}
@@ -1062,14 +1062,14 @@ export function SettingsPage() {
           </div>
 
           {/* Footer contacto */}
-          <div className="mt-6 bg-[#0B3B68]/5 rounded-2xl p-4 flex items-center gap-3">
-            <HelpCircle size={20} className="text-[#0B3B68] flex-shrink-0" />
+          <div className="mt-6 bg-[#1C1917]/5 rounded-2xl p-4 flex items-center gap-3">
+            <HelpCircle size={20} className="text-[#1C1917] flex-shrink-0" />
             <div>
-              <p className="text-sm font-bold text-[#0B3B68]">¿Necesitas ayuda adicional?</p>
-              <p className="text-xs text-[#6B7280]">Contáctanos por WhatsApp y te asistimos en minutos</p>
+              <p className="text-sm font-bold text-[#1C1917]">¿Necesitas ayuda adicional?</p>
+              <p className="text-xs text-[#78716C]">Contáctanos por WhatsApp y te asistimos en minutos</p>
             </div>
             <a
-              href={`https://wa.me/${ADMIN_WHATSAPP_PHONE}?text=Hola,%20necesito%20ayuda%20con%20Bisne%20con%20Talla`}
+              href={`https://wa.me/${ADMIN_WHATSAPP_PHONE}?text=Hola,%20necesito%20ayuda%20con%20Nexus`}
               target="_blank"
               rel="noopener noreferrer"
               className="ml-auto flex-shrink-0 bg-[#25D366] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#25D366]/90 transition-colors"
@@ -1081,19 +1081,19 @@ export function SettingsPage() {
       )}
 
       {showResetDbConfirm && (
-          <div className="fixed inset-0 bg-[#0B3B68]/60 backdrop-blur-sm z-[60] flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="fixed inset-0 bg-[#1C1917]/60 backdrop-blur-sm z-[60] flex items-center justify-center p-4 animate-in fade-in duration-200">
               <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 text-center animate-in zoom-in-95 duration-200">
                   <div className="w-14 h-14 bg-[#EF4444]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <AlertTriangle size={28} className="text-[#EF4444]" />
                   </div>
-                  <h3 className="font-bold text-lg text-[#1F2937] mb-1">¿Restablecer base de datos?</h3>
-                  <p className="text-sm text-[#6B7280] mb-6">
+                  <h3 className="font-bold text-lg text-[#1C1917] mb-1">¿Restablecer base de datos?</h3>
+                  <p className="text-sm text-[#78716C] mb-6">
                       Esto borrará todos los datos locales. Los datos ya sincronizados con la nube se recuperarán al volver a iniciar sesión.
                   </p>
                   <div className="flex gap-3">
                       <button
                           onClick={() => setShowResetDbConfirm(false)}
-                          className="flex-1 py-2.5 border border-gray-200 text-[#6B7280] font-bold rounded-xl hover:bg-gray-50 transition-colors"
+                          className="flex-1 py-2.5 border border-gray-200 text-[#78716C] font-bold rounded-xl hover:bg-gray-50 transition-colors"
                       >
                           Cancelar
                       </button>

@@ -113,7 +113,7 @@ export function SuperAdminLogin() {
                         <input 
                             type="email" required 
                             className="w-full pl-12 pr-4 py-3.5 bg-slate-900 border border-slate-700 rounded-xl text-white focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600" 
-                            placeholder="admin@bisne.com" 
+                            placeholder="admin@nexus.com" 
                             value={email} onChange={e => setEmail(e.target.value)} 
                         />
                     </div>

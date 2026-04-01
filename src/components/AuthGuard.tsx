@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 import { ADMIN_WHATSAPP_PHONE } from '../lib/config';
 
 function TrialExpiredScreen({ onSignOut }: { onSignOut: () => void }) {
-  const waMsg = encodeURIComponent("Hola, mi período de prueba de Bisne con Talla ha vencido y deseo activar mi cuenta.");
+  const waMsg = encodeURIComponent("Hola, mi período de prueba de Nexus ha vencido y deseo activar mi cuenta.");
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 p-6 animate-in fade-in duration-500">
       <div className="bg-white p-8 rounded-3xl shadow-xl max-w-sm w-full text-center border border-amber-100">
@@ -20,7 +20,7 @@ function TrialExpiredScreen({ onSignOut }: { onSignOut: () => void }) {
           Tu período de prueba gratuito ha terminado.
         </p>
         <p className="text-slate-500 mb-8 text-sm leading-relaxed">
-          Contacta al administrador para activar tu cuenta y seguir usando <strong>Bisne con Talla</strong>.
+          Contacta al administrador para activar tu cuenta y seguir usando <strong>Nexus</strong>.
         </p>
         <div className="space-y-3">
           <a
@@ -225,7 +225,7 @@ export function AuthGuard({ children }: AuthGuardProps) {
                         <Loader2 className="text-indigo-600 w-8 h-8 animate-pulse" />
                     </div>
                 </div>
-                <h2 className="text-2xl font-black text-slate-800 mb-2 tracking-tight">Bisne con Talla</h2>
+                <h2 className="text-2xl font-black text-slate-800 mb-2 tracking-tight">Nexus</h2>
                 <p className="text-slate-500 font-medium text-sm animate-pulse">{loadingMessage}</p>
             </div>
         )}

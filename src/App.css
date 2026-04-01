@@ -6,14 +6,14 @@
 
 @layer base {
   html {
-    /* Fondo Principal del Manual (#F3F4F6) y Texto Principal (#1F2937) */
-    @apply bg-[#F3F4F6] text-[#1F2937] font-sans antialiased;
+    /* Fondo Principal del Manual (#FAFAF9) y Texto Principal (#1C1917) */
+    @apply bg-[#FAFAF9] text-[#1C1917] font-sans antialiased;
   }
 
   /* Títulos (Headings) - Montserrat */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
-    @apply font-bold text-[#0B3B68]; /* Bisne Navy por defecto en títulos */
+    @apply font-bold text-[#1C1917]; /* Nexus dark por defecto en títulos */
   }
 
   /* Cuerpo y Datos - Roboto */
@@ -30,7 +30,7 @@
     @apply bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-[#0B3B68]/20 rounded-full hover:bg-[#0B3B68]/40;
+    @apply bg-[#1C1917]/20 rounded-full hover:bg-[#1C1917]/40;
   }
 }
 
@@ -61,6 +61,6 @@
   /* Usa el atributo data-label para poner el título a la izquierda en móvil */
   .mobile-card-table td::before {
     content: attr(data-label);
-    @apply font-bold text-[#6B7280] text-xs uppercase mr-4 md:hidden;
+    @apply font-bold text-[#78716C] text-xs uppercase mr-4 md:hidden;
   }
 }

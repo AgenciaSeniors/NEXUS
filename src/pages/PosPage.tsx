@@ -474,7 +474,7 @@ export function PosPage() {
                     <div className="h-full flex flex-col items-center justify-center py-10 px-4">
                         <div className="max-w-sm w-full">
                             <div className="text-center mb-6">
-                                <div className="w-16 h-16 rounded-2xl bg-[#0B3B68] flex items-center justify-center mx-auto mb-4">
+                                <div className="w-16 h-16 rounded-2xl bg-[#1C1917] flex items-center justify-center mx-auto mb-4">
                                     <ShoppingCart size={32} className="text-white" />
                                 </div>
                                 <h2 className="text-2xl font-black text-bisne-navy font-heading">¡Bienvenido!</h2>
@@ -482,7 +482,7 @@ export function PosPage() {
                             </div>
                             <div className="space-y-3">
                                 <div className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
-                                    <div className="w-9 h-9 rounded-xl bg-[#7AC142] flex items-center justify-center flex-shrink-0">
+                                    <div className="w-9 h-9 rounded-xl bg-[#EA580C] flex items-center justify-center flex-shrink-0">
                                         <span className="text-white font-black text-sm">1</span>
                                     </div>
                                     <div className="min-w-0">
@@ -492,7 +492,7 @@ export function PosPage() {
                                     <Package size={18} className="text-gray-300 flex-shrink-0 ml-auto" />
                                 </div>
                                 <div className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
-                                    <div className="w-9 h-9 rounded-xl bg-[#0B3B68] flex items-center justify-center flex-shrink-0">
+                                    <div className="w-9 h-9 rounded-xl bg-[#1C1917] flex items-center justify-center flex-shrink-0">
                                         <span className="text-white font-black text-sm">2</span>
                                     </div>
                                     <div className="min-w-0">
@@ -501,7 +501,7 @@ export function PosPage() {
                                     </div>
                                     <Lock size={18} className="text-gray-300 flex-shrink-0 ml-auto" />
                                 </div>
-                                <div className="flex items-center gap-4 bg-white border border-[#7AC142]/40 rounded-2xl p-4 shadow-sm bg-[#7AC142]/5">
+                                <div className="flex items-center gap-4 bg-white border border-[#EA580C]/40 rounded-2xl p-4 shadow-sm bg-[#EA580C]/5">
                                     <div className="w-9 h-9 rounded-xl bg-gray-200 flex items-center justify-center flex-shrink-0">
                                         <span className="text-gray-500 font-black text-sm">3</span>
                                     </div>
@@ -509,7 +509,7 @@ export function PosPage() {
                                         <p className="font-bold text-bisne-navy text-sm">¡Empieza a vender!</p>
                                         <p className="text-xs text-text-secondary">Vuelve aquí y realiza tu primera venta</p>
                                     </div>
-                                    <Tag size={18} className="text-[#7AC142] flex-shrink-0 ml-auto" />
+                                    <Tag size={18} className="text-[#EA580C] flex-shrink-0 ml-auto" />
                                 </div>
                             </div>
                         </div>
@@ -632,18 +632,18 @@ export function PosPage() {
                   const effectivePrice = item.custom_price ?? item.price;
                   const isEditing = editingItemId === item.id;
                   return (
-                    <div key={item.id} className={`bg-surface p-3 rounded-xl border shadow-sm flex flex-col gap-2 animate-in slide-in-from-right-4 duration-200 ${isEditing ? 'border-[#0B3B68]/40 ring-1 ring-[#0B3B68]/20' : 'border-gray-200'}`}>
+                    <div key={item.id} className={`bg-surface p-3 rounded-xl border shadow-sm flex flex-col gap-2 animate-in slide-in-from-right-4 duration-200 ${isEditing ? 'border-[#1C1917]/40 ring-1 ring-[#1C1917]/20' : 'border-gray-200'}`}>
                         <div className="flex justify-between items-start">
                             <div className="flex-1 pr-2 min-w-0">
                                 <h4 className="font-bold text-text-main text-sm leading-tight line-clamp-2 font-heading">{item.name}</h4>
                                 <p className="text-xs text-text-secondary font-mono mt-0.5">
                                     {item.custom_price !== undefined
-                                        ? <><span className="line-through opacity-40">{currency.format(item.price)}</span> <span className="text-[#0B3B68] font-bold">{currency.format(item.custom_price)}</span></>
+                                        ? <><span className="line-through opacity-40">{currency.format(item.price)}</span> <span className="text-[#1C1917] font-bold">{currency.format(item.custom_price)}</span></>
                                         : <>{currency.format(item.price)}</>
                                     } <span className="opacity-70">x unidad</span>
                                 </p>
                                 {item.note && !isEditing && (
-                                    <p className="text-xs text-[#0B3B68] bg-[#0B3B68]/8 rounded-md px-2 py-0.5 mt-1 italic">📝 {item.note}</p>
+                                    <p className="text-xs text-[#1C1917] bg-[#1C1917]/8 rounded-md px-2 py-0.5 mt-1 italic">📝 {item.note}</p>
                                 )}
                             </div>
                             <div className="flex items-center gap-1.5 flex-shrink-0">
@@ -652,7 +652,7 @@ export function PosPage() {
                                 </div>
                                 <button
                                     onClick={() => isEditing ? setEditingItemId(null) : openItemEditor(item)}
-                                    className={`p-1.5 rounded-lg transition-colors ${isEditing ? 'text-[#0B3B68] bg-[#0B3B68]/10' : 'text-gray-400 hover:text-[#0B3B68] hover:bg-[#0B3B68]/8'}`}
+                                    className={`p-1.5 rounded-lg transition-colors ${isEditing ? 'text-[#1C1917] bg-[#1C1917]/10' : 'text-gray-400 hover:text-[#1C1917] hover:bg-[#1C1917]/8'}`}
                                     title="Nota y precio personalizado"
                                 >
                                     <Edit3 size={14}/>
@@ -662,13 +662,13 @@ export function PosPage() {
 
                         {/* Editor inline de nota + precio */}
                         {isEditing && (
-                            <div className="flex flex-col gap-2 pt-1 border-t border-[#0B3B68]/10">
+                            <div className="flex flex-col gap-2 pt-1 border-t border-[#1C1917]/10">
                                 <input
                                     type="text"
                                     placeholder="Nota del ítem (ej: sin cebolla, extra queso…)"
                                     value={editNote}
                                     onChange={e => setEditNote(e.target.value)}
-                                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-[#0B3B68] outline-none"
+                                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-[#1C1917] outline-none"
                                     autoFocus
                                 />
                                 <div className="flex items-center gap-2">
@@ -679,11 +679,11 @@ export function PosPage() {
                                         step="0.01"
                                         value={editPrice}
                                         onChange={e => setEditPrice(e.target.value)}
-                                        className="flex-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs font-mono focus:ring-2 focus:ring-[#0B3B68] outline-none"
+                                        className="flex-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs font-mono focus:ring-2 focus:ring-[#1C1917] outline-none"
                                     />
                                     <button
                                         onClick={() => saveItemEditor(item.id)}
-                                        className="px-3 py-2 bg-[#0B3B68] text-white text-xs font-bold rounded-lg hover:bg-[#0B3B68]/90 transition-colors whitespace-nowrap"
+                                        className="px-3 py-2 bg-[#1C1917] text-white text-xs font-bold rounded-lg hover:bg-[#1C1917]/90 transition-colors whitespace-nowrap"
                                     >
                                         Listo
                                     </button>
@@ -746,7 +746,7 @@ export function PosPage() {
                         placeholder="Nombre o Mesa (Opcional)" 
                         value={orderNote}
                         onChange={(e) => setOrderNote(e.target.value)}
-                        className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-[#1F2937] focus:ring-2 focus:ring-[#0B3B68] focus:bg-white outline-none transition-all placeholder-gray-400"
+                        className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-[#1C1917] focus:ring-2 focus:ring-[#1C1917] focus:bg-white outline-none transition-all placeholder-gray-400"
                     />
                 </div>
             </div>

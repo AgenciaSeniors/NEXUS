@@ -56,11 +56,11 @@ export function StaffSelectorModal({ businessId, onSelect, onClose }: Props) {
 
   if (!selected) {
     return (
-      <div className="fixed inset-0 bg-[#0B3B68] flex flex-col items-center justify-center p-6 z-50">
+      <div className="fixed inset-0 bg-[#1C1917] flex flex-col items-center justify-center p-6 z-50">
         <div className="w-full max-w-md">
           <div className="flex flex-col items-center mb-8">
-            <div className="bg-[#7AC142] w-16 h-16 rounded-2xl flex items-center justify-center mb-4 shadow-xl shadow-[#7AC142]/30">
-              <Users size={32} className="text-[#0B3B68]" />
+            <div className="bg-[#EA580C] w-16 h-16 rounded-2xl flex items-center justify-center mb-4 shadow-xl shadow-[#EA580C]/30">
+              <Users size={32} className="text-[#1C1917]" />
             </div>
             <h1 className="text-3xl font-black text-white text-center">¿Quién eres?</h1>
             <p className="text-white/60 mt-2 text-center text-sm">Selecciona tu perfil para acceder al sistema</p>
@@ -77,10 +77,10 @@ export function StaffSelectorModal({ businessId, onSelect, onClose }: Props) {
                 <button
                   key={staff.id}
                   onClick={() => handleSelectStaff(staff)}
-                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#7AC142]/50 text-white p-4 rounded-2xl transition-all active:scale-95 text-left"
+                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#EA580C]/50 text-white p-4 rounded-2xl transition-all active:scale-95 text-left"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-black text-lg flex-shrink-0 ${
-                    staff.role === 'admin' ? 'bg-[#7AC142] text-[#0B3B68]' : 'bg-white/20 text-white'
+                    staff.role === 'admin' ? 'bg-[#EA580C] text-[#1C1917]' : 'bg-white/20 text-white'
                   }`}>
                     {staff.name.substring(0, 2).toUpperCase()}
                   </div>
@@ -110,11 +110,11 @@ export function StaffSelectorModal({ businessId, onSelect, onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 bg-[#0B3B68] flex flex-col items-center justify-center p-6 z-50">
+    <div className="fixed inset-0 bg-[#1C1917] flex flex-col items-center justify-center p-6 z-50">
       <div className="w-full max-w-xs">
         <div className="flex flex-col items-center mb-8">
           <div className={`w-20 h-20 rounded-2xl flex items-center justify-center font-black text-3xl mb-4 shadow-xl ${
-            selected.role === 'admin' ? 'bg-[#7AC142] text-[#0B3B68]' : 'bg-white/20 text-white'
+            selected.role === 'admin' ? 'bg-[#EA580C] text-[#1C1917]' : 'bg-white/20 text-white'
           }`}>
             {selected.name.substring(0, 2).toUpperCase()}
           </div>
@@ -127,7 +127,7 @@ export function StaffSelectorModal({ businessId, onSelect, onClose }: Props) {
             <div
               key={i}
               className={`w-4 h-4 rounded-full transition-all duration-150 ${
-                i < pin.length ? 'bg-[#7AC142] scale-110' : 'bg-white/20'
+                i < pin.length ? 'bg-[#EA580C] scale-110' : 'bg-white/20'
               }`}
             />
           ))}
@@ -144,7 +144,7 @@ export function StaffSelectorModal({ businessId, onSelect, onClose }: Props) {
             <button
               key={d}
               onClick={() => handlePinDigit(d)}
-              className="bg-white/10 hover:bg-white/20 active:bg-[#7AC142] active:text-[#0B3B68] text-white font-black text-2xl py-5 rounded-2xl transition-all active:scale-95 border border-white/5"
+              className="bg-white/10 hover:bg-white/20 active:bg-[#EA580C] active:text-[#1C1917] text-white font-black text-2xl py-5 rounded-2xl transition-all active:scale-95 border border-white/5"
             >
               {d}
             </button>
@@ -152,7 +152,7 @@ export function StaffSelectorModal({ businessId, onSelect, onClose }: Props) {
           <div />
           <button
             onClick={() => handlePinDigit('0')}
-            className="bg-white/10 hover:bg-white/20 active:bg-[#7AC142] active:text-[#0B3B68] text-white font-black text-2xl py-5 rounded-2xl transition-all active:scale-95 border border-white/5"
+            className="bg-white/10 hover:bg-white/20 active:bg-[#EA580C] active:text-[#1C1917] text-white font-black text-2xl py-5 rounded-2xl transition-all active:scale-95 border border-white/5"
           >
             0
           </button>

@@ -46,7 +46,7 @@ function UpdatePasswordScreen({ onComplete }: { onComplete: () => void }) {
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-2xl shadow-xl max-w-sm w-full border border-slate-200 animate-in zoom-in-95 duration-300">
-        <div className="bg-[#0B3B68] w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#0B3B68]/20">
+        <div className="bg-[#1C1917] w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#1C1917]/20">
            <Lock className="text-white w-7 h-7" />
         </div>
         <h2 className="text-2xl font-black text-slate-900 mb-2">Nueva Contraseña</h2>
@@ -58,13 +58,13 @@ function UpdatePasswordScreen({ onComplete }: { onComplete: () => void }) {
               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
               <input 
                 type="password" required minLength={6} autoFocus
-                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] outline-none transition-all font-medium" 
+                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] outline-none transition-all font-medium" 
                 placeholder="••••••••" 
                 value={password} onChange={e => setPassword(e.target.value)} 
               />
             </div>
           </div>
-          <button disabled={loading} type="submit" className="w-full bg-[#7AC142] text-white font-bold py-3.5 rounded-xl hover:bg-[#5e9631] transition-all flex items-center justify-center gap-2 mt-4 shadow-lg shadow-[#7AC142]/20 active:scale-95 disabled:opacity-70">
+          <button disabled={loading} type="submit" className="w-full bg-[#EA580C] text-white font-bold py-3.5 rounded-xl hover:bg-[#C2410C] transition-all flex items-center justify-center gap-2 mt-4 shadow-lg shadow-[#EA580C]/20 active:scale-95 disabled:opacity-70">
             {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Guardar Contraseña"}
           </button>
         </form>
@@ -143,7 +143,7 @@ function LoginScreen({ onRegistrationStart, onRegistrationEnd, onEnterApp }: Log
       // La RPC ya crea el negocio con status='trial' y el perfil como 'active'.
       // No es necesario actualizar nada más desde el cliente.
 
-      toast.success('¡Bienvenido a Bisne con Talla! Tienes 7 días de prueba gratuita.', { duration: 6000 });
+      toast.success('¡Bienvenido a Nexus! Tienes 7 días de prueba gratuita.', { duration: 6000 });
 
       // Marcar que es un registro nuevo para que Layout muestre la guía rápida
       sessionStorage.setItem('nexus_new_registration', '1');
@@ -164,35 +164,35 @@ function LoginScreen({ onRegistrationStart, onRegistrationEnd, onEnterApp }: Log
   const handleForgotPassword = (e: React.FormEvent) => {
       e.preventDefault();
       if (!email) return toast.error("Por favor, ingresa tu correo electrónico");
-      const msg = `Hola, olvidé mi contraseña de Bisne con Talla.\nMi correo es: ${email}\nNecesito que me la restablezcan. Gracias.`;
+      const msg = `Hola, olvidé mi contraseña de Nexus.\nMi correo es: ${email}\nNecesito que me la restablezcan. Gracias.`;
       window.open(`https://wa.me/${ADMIN_WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   // ✅ MENSAJE DINÁMICO DE WHATSAPP
   const defaultWhatsAppMessage = mode === 'register' 
-        ? "Hola administrador, acabo de registrar mi negocio en Bisne con Talla y necesito que aprueben mi cuenta."
-        : "Hola soporte de Bisne con Talla, necesito ayuda para acceder a mi cuenta.";
+        ? "Hola administrador, acabo de registrar mi negocio en Nexus y necesito que aprueben mi cuenta."
+        : "Hola soporte de Nexus, necesito ayuda para acceder a mi cuenta.";
   const whatsappUrl = `https://wa.me/${ADMIN_WHATSAPP_PHONE}?text=${encodeURIComponent(defaultWhatsAppMessage)}`;
 
   return (
-    <div className="min-h-screen bg-[#F3F4F6] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#FAFAF9] flex items-center justify-center p-4">
       <div className="bg-white w-full max-w-4xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
         
         {/* LADO IZQUIERDO: DECORATIVO (SOLO PC) */}
-        <div className="w-full md:w-1/2 bg-[#0B3B68] p-10 flex flex-col justify-between text-white relative overflow-hidden hidden md:flex">
+        <div className="w-full md:w-1/2 bg-[#1C1917] p-10 flex flex-col justify-between text-white relative overflow-hidden hidden md:flex">
           <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-             <div className="absolute top-10 left-10 w-40 h-40 bg-[#7AC142] rounded-full blur-3xl"></div>
+             <div className="absolute top-10 left-10 w-40 h-40 bg-[#EA580C] rounded-full blur-3xl"></div>
              <div className="absolute bottom-10 right-10 w-56 h-56 bg-blue-400 rounded-full blur-[100px]"></div>
           </div>
           
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-10">
-              <div className="bg-[#7AC142] p-2.5 rounded-xl shadow-lg shadow-[#7AC142]/20"><Store className="w-7 h-7 text-[#0B3B68]" /></div>
-              <span className="text-2xl font-black tracking-tight drop-shadow-md">Bisne con Talla</span>
+              <div className="bg-[#EA580C] p-2.5 rounded-xl shadow-lg shadow-[#EA580C]/20"><Store className="w-7 h-7 text-[#1C1917]" /></div>
+              <span className="text-2xl font-black tracking-tight drop-shadow-md">Nexus</span>
             </div>
             
             {/* ✅ TITULARES MEJORADOS Y EN VERDE PARA QUE RESALTEN */}
-            <h1 className="text-5xl font-black mb-5 leading-tight drop-shadow-xl text-[#7AC142]">
+            <h1 className="text-5xl font-black mb-5 leading-tight drop-shadow-xl text-[#EA580C]">
               {mode === 'login' ? 'Bienvenido' : mode === 'forgot' ? 'Recupera tu acceso' : 'Comienza tu negocio'}
             </h1>
             <p className="text-slate-300 text-lg font-medium leading-relaxed drop-shadow-md">
@@ -202,8 +202,8 @@ function LoginScreen({ onRegistrationStart, onRegistrationEnd, onEnterApp }: Log
 
           <div className="relative z-10 mt-8 md:mt-0">
             <div className="flex flex-col gap-3 text-sm text-slate-200 font-medium">
-              <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#7AC142]"/> Base de Datos Offline-First</span>
-              <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#7AC142]"/> Sincronización Inmediata</span>
+              <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#EA580C]"/> Base de Datos Offline-First</span>
+              <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#EA580C]"/> Sincronización Inmediata</span>
             </div>
           </div>
         </div>
@@ -215,19 +215,19 @@ function LoginScreen({ onRegistrationStart, onRegistrationEnd, onEnterApp }: Log
             
             {/* ✅ ENCABEZADO MÓVIL */}
             <div className="md:hidden flex flex-col items-center mb-8 text-center animate-in fade-in slide-in-from-top-4 duration-500">
-                <div className="bg-[#0B3B68] p-3.5 rounded-2xl mb-4 shadow-xl shadow-[#0B3B68]/20">
-                    <Store className="w-8 h-8 text-[#7AC142]" />
+                <div className="bg-[#1C1917] p-3.5 rounded-2xl mb-4 shadow-xl shadow-[#1C1917]/20">
+                    <Store className="w-8 h-8 text-[#EA580C]" />
                 </div>
-                <h1 className="text-3xl font-black text-[#0B3B68] tracking-tight">Bisne con Talla</h1>
-                <p className="text-[#7AC142] text-sm mt-1 font-bold">
+                <h1 className="text-3xl font-black text-[#1C1917] tracking-tight">Nexus</h1>
+                <p className="text-[#EA580C] text-sm mt-1 font-bold">
                     {mode === 'login' ? 'Bienvenido' : mode === 'register' ? 'Crea tu cuenta ahora' : 'Restablecer Acceso'}
                 </p>
             </div>
 
-            <h2 className="text-2xl font-black text-[#1F2937] mb-2 hidden md:block">
+            <h2 className="text-2xl font-black text-[#1C1917] mb-2 hidden md:block">
                 {mode === 'login' ? 'Iniciar Sesión' : mode === 'forgot' ? 'Recuperar Contraseña' : 'Crear Cuenta'}
             </h2>
-            <p className="text-[#6B7280] mb-8 text-sm hidden md:block">
+            <p className="text-[#78716C] mb-8 text-sm hidden md:block">
                 {mode === 'login' ? 'Ingresa tus credenciales para acceder' : mode === 'forgot' ? 'Escribe tu correo y te contactamos por WhatsApp para restablecerla.' : 'Completa los datos de tu negocio'}
             </p>
 
@@ -236,58 +236,58 @@ function LoginScreen({ onRegistrationStart, onRegistrationEnd, onEnterApp }: Log
               {mode === 'register' && (
                 <div className="animate-in slide-in-from-right-4 duration-300 space-y-4">
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-[#6B7280] uppercase tracking-wide">Nombre Completo</label>
+                    <label className="text-xs font-bold text-[#78716C] uppercase tracking-wide">Nombre Completo</label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280] w-5 h-5" />
-                      <input type="text" required className="w-full pl-10 pr-4 py-3 bg-[#F3F4F6] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] focus:bg-white outline-none transition-all font-medium text-[#1F2937]" placeholder="Ej. Juan Pérez" value={fullName} onChange={e => setFullName(e.target.value)} />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 text-[#78716C] w-5 h-5" />
+                      <input type="text" required className="w-full pl-10 pr-4 py-3 bg-[#FAFAF9] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] focus:bg-white outline-none transition-all font-medium text-[#1C1917]" placeholder="Ej. Juan Pérez" value={fullName} onChange={e => setFullName(e.target.value)} />
                     </div>
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-[#6B7280] uppercase tracking-wide">Nombre del Negocio</label>
+                    <label className="text-xs font-bold text-[#78716C] uppercase tracking-wide">Nombre del Negocio</label>
                     <div className="relative">
-                      <Store className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280] w-5 h-5" />
-                      <input type="text" required className="w-full pl-10 pr-4 py-3 bg-[#F3F4F6] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] focus:bg-white outline-none transition-all font-medium text-[#1F2937]" placeholder="Ej. Cafetería Central" value={businessName} onChange={e => setBusinessName(e.target.value)} />
+                      <Store className="absolute left-3 top-1/2 -translate-y-1/2 text-[#78716C] w-5 h-5" />
+                      <input type="text" required className="w-full pl-10 pr-4 py-3 bg-[#FAFAF9] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] focus:bg-white outline-none transition-all font-medium text-[#1C1917]" placeholder="Ej. Cafetería Central" value={businessName} onChange={e => setBusinessName(e.target.value)} />
                     </div>
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-[#6B7280] uppercase tracking-wide">Teléfono</label>
+                    <label className="text-xs font-bold text-[#78716C] uppercase tracking-wide">Teléfono</label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280] w-5 h-5" />
-                      <input type="tel" className="w-full pl-10 pr-4 py-3 bg-[#F3F4F6] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] focus:bg-white outline-none transition-all font-medium text-[#1F2937]" placeholder="+53 5555 5555" value={phone} onChange={e => setPhone(e.target.value)} />
+                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-[#78716C] w-5 h-5" />
+                      <input type="tel" className="w-full pl-10 pr-4 py-3 bg-[#FAFAF9] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] focus:bg-white outline-none transition-all font-medium text-[#1C1917]" placeholder="+53 5555 5555" value={phone} onChange={e => setPhone(e.target.value)} />
                     </div>
                   </div>
-                  <div className="bg-[#7AC142]/10 border border-[#7AC142]/30 rounded-xl px-4 py-3 flex items-center gap-3">
+                  <div className="bg-[#EA580C]/10 border border-[#EA580C]/30 rounded-xl px-4 py-3 flex items-center gap-3">
                     <span className="text-2xl">🎁</span>
                     <div>
-                      <p className="text-sm font-black text-[#0B3B68]">7 días de prueba gratuita</p>
-                      <p className="text-xs text-[#6B7280]">Sin costo. Sin tarjeta. Cancela cuando quieras.</p>
+                      <p className="text-sm font-black text-[#1C1917]">7 días de prueba gratuita</p>
+                      <p className="text-xs text-[#78716C]">Sin costo. Sin tarjeta. Cancela cuando quieras.</p>
                     </div>
                   </div>
                 </div>
               )}
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-[#6B7280] uppercase tracking-wide">Correo Electrónico</label>
+                <label className="text-xs font-bold text-[#78716C] uppercase tracking-wide">Correo Electrónico</label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280] w-5 h-5" />
-                  <input type="email" required className="w-full pl-10 pr-4 py-3 bg-[#F3F4F6] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] focus:bg-white outline-none transition-all font-medium text-[#1F2937]" placeholder="correo@ejemplo.com" value={email} onChange={e => setEmail(e.target.value)} />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-[#78716C] w-5 h-5" />
+                  <input type="email" required className="w-full pl-10 pr-4 py-3 bg-[#FAFAF9] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] focus:bg-white outline-none transition-all font-medium text-[#1C1917]" placeholder="correo@ejemplo.com" value={email} onChange={e => setEmail(e.target.value)} />
                 </div>
               </div>
 
               {mode !== 'forgot' && (
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-[#6B7280] uppercase tracking-wide">Contraseña</label>
+                    <label className="text-xs font-bold text-[#78716C] uppercase tracking-wide">Contraseña</label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280] w-5 h-5" />
-                      <input type={showPassword ? 'text' : 'password'} required className="w-full pl-10 pr-11 py-3 bg-[#F3F4F6] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0B3B68] focus:bg-white outline-none transition-all font-medium text-[#1F2937]" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} />
-                      <button type="button" onClick={() => setShowPassword(v => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7280] hover:text-[#0B3B68] transition-colors p-1">
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-[#78716C] w-5 h-5" />
+                      <input type={showPassword ? 'text' : 'password'} required className="w-full pl-10 pr-11 py-3 bg-[#FAFAF9] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C1917] focus:bg-white outline-none transition-all font-medium text-[#1C1917]" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} />
+                      <button type="button" onClick={() => setShowPassword(v => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#78716C] hover:text-[#1C1917] transition-colors p-1">
                         {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                       </button>
                     </div>
                   </div>
               )}
 
-              <button disabled={loading} type="submit" className="w-full bg-[#0B3B68] text-white font-bold py-3.5 rounded-xl hover:bg-[#092b4d] transition-all flex items-center justify-center gap-2 mt-6 shadow-xl shadow-[#0B3B68]/20 disabled:opacity-70 active:scale-95 text-lg">
+              <button disabled={loading} type="submit" className="w-full bg-[#1C1917] text-white font-bold py-3.5 rounded-xl hover:bg-[#0C0A09] transition-all flex items-center justify-center gap-2 mt-6 shadow-xl shadow-[#1C1917]/20 disabled:opacity-70 active:scale-95 text-lg">
                 {loading && <Loader2 className="animate-spin w-5 h-5" />}
                 {mode === 'login' ? 'Entrar al Sistema' : mode === 'forgot' ? 'Contactar por WhatsApp' : 'Registrar Negocio'}
                 {!loading && mode !== 'forgot' && <ArrowRight className="w-5 h-5" />}
@@ -296,19 +296,19 @@ function LoginScreen({ onRegistrationStart, onRegistrationEnd, onEnterApp }: Log
 
             <div className="mt-6 text-center space-y-3">
               {mode === 'login' && (
-                  <button type="button" onClick={() => setMode('forgot')} className="text-sm font-bold text-[#6B7280] hover:text-[#0B3B68] transition-colors">
+                  <button type="button" onClick={() => setMode('forgot')} className="text-sm font-bold text-[#78716C] hover:text-[#1C1917] transition-colors">
                     ¿Olvidaste tu contraseña?
                   </button>
               )}
               
-              <div className="text-[#6B7280] text-sm">
+              <div className="text-[#78716C] text-sm">
                 {mode === 'login' ? '¿No tienes cuenta?' : mode === 'register' ? '¿Ya tienes cuenta?' : ''}
                 {mode !== 'forgot' ? (
-                    <button onClick={() => setMode(mode === 'login' ? 'register' : 'login')} className="ml-2 font-black text-[#7AC142] hover:text-[#5e9631] transition-colors">
+                    <button onClick={() => setMode(mode === 'login' ? 'register' : 'login')} className="ml-2 font-black text-[#EA580C] hover:text-[#C2410C] transition-colors">
                       {mode === 'login' ? 'Regístrate Aquí' : 'Inicia Sesión'}
                     </button>
                 ) : (
-                    <button onClick={() => setMode('login')} className="font-black text-[#0B3B68] hover:text-[#092b4d] transition-colors">
+                    <button onClick={() => setMode('login')} className="font-black text-[#1C1917] hover:text-[#0C0A09] transition-colors">
                       Volver a Iniciar Sesión
                     </button>
                 )}
@@ -332,7 +332,7 @@ function LoginScreen({ onRegistrationStart, onRegistrationEnd, onEnterApp }: Log
             </div>
 
             <div className="mt-4 pt-4 flex justify-center">
-                <button onClick={() => navigate('/admin-login')} className="flex items-center gap-1.5 text-gray-400 hover:text-[#0B3B68] transition-colors text-[10px] font-bold uppercase tracking-wider">
+                <button onClick={() => navigate('/admin-login')} className="flex items-center gap-1.5 text-gray-400 hover:text-[#1C1917] transition-colors text-[10px] font-bold uppercase tracking-wider">
                     <Shield size={12} /> Acceso Super Admin
                 </button>
             </div>
@@ -605,9 +605,9 @@ function BusinessApp() {
     return (
       <div className="h-screen w-full flex flex-col items-center justify-center bg-slate-50 gap-6 p-4">
          <div className="flex flex-col items-center gap-2">
-            <Loader2 className="animate-spin text-[#0B3B68] w-10 h-10 mb-4" />
+            <Loader2 className="animate-spin text-[#1C1917] w-10 h-10 mb-4" />
             <p className="text-slate-700 font-bold text-lg tracking-tight">Verificando Credenciales...</p>
-            <p className="text-slate-400 text-xs mt-2">Conectando con Bisne con Talla</p>
+            <p className="text-slate-400 text-xs mt-2">Conectando con Nexus</p>
          </div>
          {/* Botón de pánico oculto por si acaso */}
          <button onClick={handleForceLogout} className="mt-8 text-xs text-slate-400 underline hover:text-slate-600">

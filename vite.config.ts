@@ -40,4 +40,7 @@ export default defineConfig({
     })
   ],
   base: './', // Importante para Electron o hosting relativo
+  server: {
+    port: 5174,
+  },
 })

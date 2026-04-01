@@ -159,23 +159,23 @@ export function CashShiftModal({
 
   const title = isOpen ? 'Abrir Caja' : isClose ? 'Cerrar Caja' : 'Movimiento de Efectivo';
   const Icon = isOpen ? LogIn : isClose ? LogOut : DollarSign;
-  const iconBg = isOpen ? 'bg-[#7AC142]/10' : isClose ? 'bg-[#EF4444]/10' : 'bg-[#0B3B68]/10';
-  const iconColor = isOpen ? 'text-[#7AC142]' : isClose ? 'text-[#EF4444]' : 'text-[#0B3B68]';
+  const iconBg = isOpen ? 'bg-[#EA580C]/10' : isClose ? 'bg-[#EF4444]/10' : 'bg-[#1C1917]/10';
+  const iconColor = isOpen ? 'text-[#EA580C]' : isClose ? 'text-[#EF4444]' : 'text-[#1C1917]';
   const submitHandler = isOpen ? handleOpenShift : isClose ? handleCloseShift : handleMovement;
 
   return (
-    <div className="fixed inset-0 bg-[#0B3B68]/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+    <div className="fixed inset-0 bg-[#1C1917]/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-in zoom-in-95 duration-200">
 
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-[#F3F4F6]">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-[#FAFAF9]">
           <div className="flex items-center gap-3">
             <div className={`w-9 h-9 rounded-full flex items-center justify-center ${iconBg}`}>
               <Icon size={18} className={iconColor} />
             </div>
-            <h3 className="font-bold text-[#1F2937]">{title}</h3>
+            <h3 className="font-bold text-[#1C1917]">{title}</h3>
           </div>
-          <button onClick={onClose} className="p-1.5 text-[#6B7280] hover:text-[#1F2937] hover:bg-gray-200 rounded-full transition-colors">
+          <button onClick={onClose} className="p-1.5 text-[#78716C] hover:text-[#1C1917] hover:bg-gray-200 rounded-full transition-colors">
             <X size={18} />
           </button>
         </div>
@@ -190,8 +190,8 @@ export function CashShiftModal({
                 onClick={() => setMovType('in')}
                 className={`flex items-center justify-center gap-2 p-3 rounded-xl border-2 font-bold text-sm transition-all ${
                   movType === 'in'
-                    ? 'border-[#7AC142] bg-[#7AC142]/10 text-[#7AC142]'
-                    : 'border-gray-200 text-[#6B7280] hover:bg-gray-50'
+                    ? 'border-[#EA580C] bg-[#EA580C]/10 text-[#EA580C]'
+                    : 'border-gray-200 text-[#78716C] hover:bg-gray-50'
                 }`}
               >
                 <TrendingUp size={16} /> Ingreso
@@ -202,7 +202,7 @@ export function CashShiftModal({
                 className={`flex items-center justify-center gap-2 p-3 rounded-xl border-2 font-bold text-sm transition-all ${
                   movType === 'out'
                     ? 'border-[#EF4444] bg-[#EF4444]/10 text-[#EF4444]'
-                    : 'border-gray-200 text-[#6B7280] hover:bg-gray-50'
+                    : 'border-gray-200 text-[#78716C] hover:bg-gray-50'
                 }`}
               >
                 <TrendingDown size={16} /> Retiro
@@ -212,20 +212,20 @@ export function CashShiftModal({
 
           {/* MODO CIERRE: mostrar efectivo esperado */}
           {isClose && (
-            <div className="bg-[#F3F4F6] rounded-xl p-4 space-y-1">
-              <p className="text-xs text-[#6B7280] font-bold uppercase">Efectivo esperado en caja</p>
-              <p className="text-2xl font-black text-[#0B3B68]">{currency.format(expectedCash)}</p>
-              <p className="text-xs text-[#6B7280]">Ingresa el efectivo físico que contaste abajo</p>
+            <div className="bg-[#FAFAF9] rounded-xl p-4 space-y-1">
+              <p className="text-xs text-[#78716C] font-bold uppercase">Efectivo esperado en caja</p>
+              <p className="text-2xl font-black text-[#1C1917]">{currency.format(expectedCash)}</p>
+              <p className="text-xs text-[#78716C]">Ingresa el efectivo físico que contaste abajo</p>
             </div>
           )}
 
           {/* CAMPO MONTO */}
           <div>
-            <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">
+            <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">
               {isClose ? 'Efectivo contado en caja' : 'Monto'}
             </label>
             <div className="relative">
-              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B7280] font-bold text-lg">$</span>
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#78716C] font-bold text-lg">$</span>
               <input
                 type="number"
                 step="0.01"
@@ -235,7 +235,7 @@ export function CashShiftModal({
                 placeholder="0.00"
                 value={amount}
                 onChange={e => setAmount(e.target.value)}
-                className="w-full pl-8 pr-4 py-3 text-xl font-bold border-2 border-gray-200 rounded-xl focus:border-[#0B3B68] outline-none transition-colors"
+                className="w-full pl-8 pr-4 py-3 text-xl font-bold border-2 border-gray-200 rounded-xl focus:border-[#1C1917] outline-none transition-colors"
               />
             </div>
 
@@ -243,7 +243,7 @@ export function CashShiftModal({
             {isClose && amount && !isNaN(parseFloat(amount)) && (
               <div className={`mt-2 p-2 rounded-lg text-sm font-bold flex justify-between ${
                 Math.abs((parseFloat(amount) || 0) - expectedCash) < 0.01
-                  ? 'bg-[#7AC142]/10 text-[#7AC142]'
+                  ? 'bg-[#EA580C]/10 text-[#EA580C]'
                   : 'bg-[#EF4444]/10 text-[#EF4444]'
               }`}>
                 <span>Diferencia:</span>
@@ -255,14 +255,14 @@ export function CashShiftModal({
           {/* CAMPO MOTIVO (solo en movimiento) */}
           {isMovement && (
             <div>
-              <label className="block text-xs font-bold text-[#6B7280] uppercase mb-1">Motivo</label>
+              <label className="block text-xs font-bold text-[#78716C] uppercase mb-1">Motivo</label>
               <input
                 type="text"
                 required
                 placeholder="Ej. Pago proveedor, Fondo cambio..."
                 value={reason}
                 onChange={e => setReason(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#0B3B68] outline-none transition-colors"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1C1917] outline-none transition-colors"
               />
             </div>
           )}
@@ -272,7 +272,7 @@ export function CashShiftModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 py-3 border border-gray-200 text-[#6B7280] font-bold rounded-xl hover:bg-gray-50 transition-colors"
+              className="flex-1 py-3 border border-gray-200 text-[#78716C] font-bold rounded-xl hover:bg-gray-50 transition-colors"
             >
               Cancelar
             </button>
@@ -280,7 +280,7 @@ export function CashShiftModal({
               type="submit"
               disabled={isLoading}
               className={`flex-1 py-3 text-white font-bold rounded-xl transition-all active:scale-95 disabled:opacity-60 flex items-center justify-center gap-2 shadow-lg ${
-                isClose ? 'bg-[#EF4444] hover:bg-[#EF4444]/90 shadow-[#EF4444]/20' : 'bg-[#0B3B68] hover:bg-[#0B3B68]/90 shadow-[#0B3B68]/20'
+                isClose ? 'bg-[#EF4444] hover:bg-[#EF4444]/90 shadow-[#EF4444]/20' : 'bg-[#1C1917] hover:bg-[#1C1917]/90 shadow-[#1C1917]/20'
               }`}
             >
               {isLoading ? (
