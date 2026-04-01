@@ -1,17 +1,27 @@
-import { 
-  db, 
-  type QueueItem, 
-  type QueuePayload, 
-  type SalePayload, 
-  type Product, 
-  type Customer, 
-  type InventoryMovement, 
-  type AuditLog, 
+import {
+  db,
+  type QueueItem,
+  type QueuePayload,
+  type SalePayload,
+  type Product,
+  type Customer,
+  type InventoryMovement,
+  type AuditLog,
   type BusinessConfig,
   type CashShift,
   type CashMovement,
   type Staff,
-  type VoidSalePayload
+  type VoidSalePayload,
+  type RestaurantZone,
+  type RestaurantTable,
+  type TableSession,
+  type KitchenStation,
+  type ProductStation,
+  type RestaurantOrder,
+  type OrderItem,
+  type ModifierGroup,
+  type Modifier,
+  type ProductModifierGroup
 } from './db';
 import { supabase } from './supabase';
 import type { Table } from 'dexie';
@@ -159,6 +169,86 @@ async function processItem(item: QueueItem) {
         const { error } = await supabase.from('sales').update({ status: 'voided' }).eq('id', saleId);
         if (error) throw new Error(`Error anulando venta: ${error.message}`);
         await db.sales.update(saleId, { sync_status: 'synced' });
+        break;
+    }
+    case 'RESTAURANT_CONFIG_SYNC': {
+        // El payload incluye _table para identificar la tabla Supabase destino
+        const configPayload = payload as (RestaurantZone | RestaurantTable | KitchenStation | ProductStation | ModifierGroup | Modifier | ProductModifierGroup) & { _table: string };
+        const tableName = configPayload._table;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { sync_status, _table, ...cleanData } = configPayload as any;
+
+        const localTableMap: Record<string, any> = {
+            restaurant_zones: db.restaurant_zones,
+            restaurant_tables: db.restaurant_tables,
+            kitchen_stations: db.kitchen_stations,
+            modifier_groups: db.modifier_groups,
+            modifiers: db.modifiers,
+            product_modifier_groups: db.product_modifier_groups,
+            product_stations: db.product_stations,
+        };
+
+        if (sync_status === 'pending_delete') {
+            const { error } = await supabase.from(tableName).delete().eq('id', cleanData.id);
+            if (error && error.code !== '42P01') throw new Error(`Error eliminando ${tableName}: ${error.message}`);
+            const localTable = localTableMap[tableName];
+            if (localTable) await localTable.delete(cleanData.id);
+        } else {
+            const { error } = await supabase.from(tableName).upsert(cleanData);
+            if (error) throw new Error(`Error config restaurante (${tableName}): ${error.message}`);
+            const localTable = localTableMap[tableName];
+            if (localTable) await localTable.update(cleanData.id, { sync_status: 'synced' });
+        }
+        break;
+    }
+    case 'TABLE_SESSION_SYNC': {
+        const session = payload as TableSession;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { sync_status, ...cleanSession } = session;
+        const { error } = await supabase.from('table_sessions').upsert(cleanSession);
+        if (error) throw new Error(`Error sesión mesa: ${error.message}`);
+        await db.table_sessions.update(session.id, { sync_status: 'synced' });
+        break;
+    }
+    case 'RESTAURANT_ORDER_SYNC': {
+        const order = payload as RestaurantOrder & { items?: OrderItem[] };
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { sync_status, items, ...cleanOrder } = order as any;
+        const { error: orderError } = await supabase.from('restaurant_orders').upsert(cleanOrder);
+        if (orderError) throw new Error(`Error orden restaurante: ${orderError.message}`);
+        await db.restaurant_orders.update(order.id, { sync_status: 'synced' });
+
+        // Upsert order items si vienen incluidos
+        if (items && items.length > 0) {
+            const cleanItems = items.map((item: any) => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const { sync_status: _ss, ...rest } = item;
+                return rest;
+            });
+            const { error: itemsError } = await supabase.from('order_items').upsert(cleanItems);
+            if (itemsError) throw new Error(`Error ítems orden: ${itemsError.message}`);
+            for (const item of items) {
+                await db.order_items.update(item.id, { sync_status: 'synced' });
+            }
+        }
+        break;
+    }
+    case 'ORDER_ITEM_STATUS_SYNC': {
+        const item = payload as OrderItem;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { sync_status, ...cleanItem } = item;
+        const { error } = await supabase.from('order_items').upsert(cleanItem);
+        if (error) throw new Error(`Error estado ítem: ${error.message}`);
+        await db.order_items.update(item.id, { sync_status: 'synced' });
+        break;
+    }
+    case 'TABLE_STATUS_SYNC': {
+        const table = payload as RestaurantTable;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { sync_status, ...cleanTable } = table;
+        const { error } = await supabase.from('restaurant_tables').upsert(cleanTable);
+        if (error) throw new Error(`Error estado mesa: ${error.message}`);
+        await db.restaurant_tables.update(table.id, { sync_status: 'synced' });
         break;
     }
     default:
