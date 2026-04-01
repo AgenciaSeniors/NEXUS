@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Fondo Principal del Manual (#F3F4F6) y Texto Principal (#1F2937) */
+    @apply bg-[#F3F4F6] text-[#1F2937] font-sans antialiased;
+  }
+
+  /* Títulos (Headings) - Montserrat */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply font-bold text-[#0B3B68]; /* Bisne Navy por defecto en títulos */
+  }
+
+  /* Cuerpo y Datos - Roboto */
+  body, p, span, div, input, button {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Scrollbars personalizados */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#0B3B68]/20 rounded-full hover:bg-[#0B3B68]/40;
+  }
+}
+
+@layer components {
+  /* --- TRANSFORMACIÓN DE TABLAS A TARJETAS EN MÓVIL --- 
+     Esto es crucial para que el inventario y clientes se vean bien en celulares
+  */
+  .mobile-card-table {
+    @apply w-full block md:table;
+  }
+  
+  .mobile-card-table thead {
+    @apply hidden md:table-header-group;
+  }
+  
+  .mobile-card-table tbody {
+    @apply block md:table-row-group;
+  }
+  
+  .mobile-card-table tr {
+    @apply block bg-white rounded-xl shadow-sm border border-gray-200 mb-4 p-4 md:table-row md:border-b md:border-gray-100 md:shadow-none md:bg-transparent md:mb-0 md:p-0;
+  }
+  
+  .mobile-card-table td {
+    @apply flex justify-between items-center text-right py-2 border-b border-gray-50 last:border-0 md:table-cell md:text-left md:py-4 md:border-b md:border-gray-100;
+  }
+  
+  /* Usa el atributo data-label para poner el título a la izquierda en móvil */
+  .mobile-card-table td::before {
+    content: attr(data-label);
+    @apply font-bold text-[#6B7280] text-xs uppercase mr-4 md:hidden;
+  }
+}

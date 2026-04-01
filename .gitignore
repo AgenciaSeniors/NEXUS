@@ -1,0 +1,37 @@
+# Variables de entorno — NUNCA subir al repositorio
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Dependencias
+node_modules
+.pnp
+.pnp.js
+
+# Producción
+dist
+dist-electron
+release
+*.exe
+*.dmg
+*.apk
+
+# Logs y Cache
+*.log
+.DS_Store
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.claude/
+# Instaladores y carpetas de compilación pesadas
+*.apk
+*.aab
+*.exe
+release/
+android/app/build/
+android/.gradle/
